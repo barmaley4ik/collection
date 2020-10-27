@@ -1,0 +1,115 @@
+
+.logo img {
+    padding: .5rem;
+    max-height: 110px;
+    display: block;
+padding-left:25px
+}
+
+.wolf-flags-container a img {
+    
+    border: none;
+}
+.infos-container {
+    float: left;
+    font-size: 15px;
+    margin-left: 1040px;
+    color: #fff;
+    
+    font-weight: 500;
+}
+#top-bar .theme-socials-container {
+   
+    margin-top: -15px;
+    margin: -15px;
+}
+
+.infos-container {
+    float: center;
+    font-size: 25px;
+    margin-left: 500px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.wolf-flags-container {
+    float: right;
+    position: 10px;
+    top: 2px;
+    margin-right: 13px;
+}
+#top-bar .theme-socials-container .wolf-social {
+    font-size: 24px;
+}
+
+
+.logo img {
+    padding: .5rem;
+    max-height: 110px;
+    display: block;
+padding-left:25px
+}
+ .menu-wide #navbar-container .wrap {
+    max-width: none;
+    width: 100%;
+}
+#navbar {
+    float: right;
+  padding: 0px 100px;
+font-size: 15px;
+}
+#navbar-container .wrap {
+background-color: #000;
+
+
+}
+
+.wolf-flags-container img {
+    margin: 0 12px;
+}
+
+.wpcf7 input.wpcf7-submit {
+    background: none!important;
+    color: #f7f7f7!important;
+    border-color: #f7f7f7!important;
+}
+
+.wpcf7 input.wpcf7-submit:hover {
+    border-color: #f7f7f7!important;
+    background: #f7f7f7!important;
+    color: #333!important;
+}
+
+.pricing-table-button {
+    background: #fff;
+    color: #f7f7f7!important;
+    border-color: #f7f7f7!important;
+}
+
+.pricing-table-button:hover {
+    border-color: #f7f7f7!important;
+    background: #f7f7f7!important;
+    color: #333!important;
+}
+
+.tp-caption a {
+    color: #ffffff;
+}
+
+
+.button, input, optgroup, select, textarea {
+    color: #000000;
+}
+
+.author-info {
+  
+    display: none;
+}
+.comments-area {
+     display: none;
+}
+
+.nav-single {
+
+    display: none;
+}

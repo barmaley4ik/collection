@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Http\Controllers\Front;
+
+use App\Front\Condition;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Request;
+class ConditionsController extends Controller
+{
+    public function index(Condition $condition)
+    {
+        abort_if($condition->festival->is_default === 0, 404);
+
+        $festival = $condition->festival;
+
+        return view('front.condition', compact('festival', 'condition'));
+    }
+
+    public function fest($domain,Condition $condition)
+    {
+        abort_if($domain != $condition->festival->slug, 404);
+
+        $festival = $condition->festival;
+
+        return view('front.condition', compact('festival', 'condition'));
+    } 
+
+}
