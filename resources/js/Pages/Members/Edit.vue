@@ -38,7 +38,8 @@
           </div>           
 
           </template>
-          <text-input v-model="form.slug" :errors="$page.errors.slug" class="pr-6 pb-8 w-full lg:w-1/2" label="URL страницы" />
+          <text-input v-model="form.slug" :errors="$page.errors.slug" class="pr-6 pb-8 w-full" label="URL страницы" />
+          <text-input v-model="form.place_number" :errors="$page.errors.place_number" class="pr-6 pb-8 w-full lg:w-1/2" label="Номер места" />          
           <select-input v-model="form.festival_id" :errors="$page.errors.festival_id" class="pr-6 pb-8 w-full lg:w-1/2" label="Фестиваль">
             <option v-for="festival in festivals" :key="festival.id" :value="festival.id">{{ JSON.parse(festival.name)[defaultlocale] }}</option>
           </select-input> 
@@ -200,6 +201,7 @@ export default {
       form: {
         name: JSON.parse(this.member.name),
         slug: this.member.slug,
+        place_number: this.member.place_number,
         title: JSON.parse(this.member.title),
         description: JSON.parse(this.member.description),
         studio: JSON.parse(this.member.studio),

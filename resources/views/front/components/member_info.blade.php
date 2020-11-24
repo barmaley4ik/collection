@@ -67,6 +67,10 @@
 																	@endphp
 																	<p> 
 																		{{ __('front.country_city') }}: {{ $member->country->name ?? '' }}, {{ $member->city ?? '' }}
+																		@if ($member->place_number)
+																		<br>
+																			{{ __('front.member_place') }}: {{ $member->place_number }}
+																		@endif																		
 																	</p>
 																	<p>
 																		{{ __('front.studio_label') }}: {{ $member->studio }}

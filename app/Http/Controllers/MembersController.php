@@ -80,6 +80,7 @@ class MembersController extends Controller
             [
                 'name' => json_encode(Request::input('name')),
                 'slug' => Request::input('slug'),
+                'place_number' => Request::input('place_number'),
                 'title' => json_encode(Request::input('title')),
                 'description' => json_encode(Request::input('description')),
                 'studio' => json_encode(Request::input('studio')),
@@ -102,6 +103,7 @@ class MembersController extends Controller
                 'id' => $member->id,
                 'name_ru' => json_decode($member->name)->ru,
                 'name' => $member->name,
+                'place_number' => $member->place_number,
                 'slug' => $member->slug,
                 'title' => $member->title,
                 'description' => $member->description,
@@ -150,6 +152,7 @@ unique:posts,title,{$this->post->id}
         }        
         $member->update([            
             'name' => json_encode(Request::input('name')),
+            'place_number' => Request::input('place_number'),
             'slug' => Request::input('slug'),
             'title' => json_encode(Request::input('title')),
             'description' => json_encode(Request::input('description')),
