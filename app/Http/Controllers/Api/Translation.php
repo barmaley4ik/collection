@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Stichoza\GoogleTranslate\GoogleTranslate;
-
+//use Stichoza\GoogleTranslate\GoogleTranslate;
+//use JoggApp\GoogleTranslate\GoogleTranslate;
 class Translation extends Controller
 {
     protected $maxLenght = 4900;
@@ -51,8 +51,9 @@ class Translation extends Controller
     	($request->defaultLang == 'ua') ? $defaultLang = 'uk' : $defaultLang = $request->defaultLang;
     	($request->currentLang == 'ua') ? $currentLang = 'uk' : $currentLang = $request->currentLang;
     	$translate = '';
-    	$tr = new GoogleTranslate();
-        $tr->setSource($defaultLang)->setTarget($currentLang)->setOptions(['timeout' => '10']);
+/*     	$tr = new GoogleTranslate();
+        $tr->setSource($defaultLang)->setTarget($currentLang)->setOptions(['timeout' => '10']); */
+       // dd(GoogleTranslate::translate('Привет мир First Item', 'en', 'html'));
         if(strlen($request->textTranslate) > $this->maxLenght) {
             $text = $this->spRepeat2($request->textTranslate, $this->sp2);
             $optimalLenght = $this->calcMax($text, $this->maxLenght);
@@ -60,14 +61,16 @@ class Translation extends Controller
             foreach ($textArray as $string) {
                 // dd($text2);
                 try {
-                    $translate .= $tr->translate($string);
+                    $arrayTrans = \GoogleTranslate::translate($string, $currentLang);
+                    $translate .= $arrayTrans['translated_text'];//$tr->translate($string);
                 } catch (\Exception $e){
                     dd($translate, $e);
                 }
             }
         } else {
-			$forTranslate = $this->spRepeat($request->textTranslate);
-            $translate = $tr->translate($forTranslate);
+            $forTranslate = $this->spRepeat($request->textTranslate);
+            $arrayTrans = \GoogleTranslate::translate($forTranslate, $currentLang);
+            $translate = $arrayTrans['translated_text'];
         }
     	return response()->json(ucfirst($this->spRepeat($translate)));
     }

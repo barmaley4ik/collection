@@ -31,10 +31,21 @@
                         <div class="team-member-social-container">
                             <a href='{{ $member->country->logo ?? ''}}' style="pointer-events: none;" title='{{__('front.country')}}' target='_blank'>
                             <img src="{{ $member->country->logo ?? ''}}" alt="{{__('front.country')}}" title="{{__('front.country')}}" width="24" height="24" style="vertical-align: sub;"></a>
-                            <a href='{{ $social->facebook ?? '#'}}' class='fa fa-facebook' title='facebook' target='_blank'></a>
-                            <a href='mailto:{{ $social->email ?? ''}}' class='fa fa-envelope' title='mail' target='_blank'></a>
-                            <a href='{{ $social->instagram ?? '#'}}' class='fa fa-instagram' title='instagram' target='_blank'></a>
-                            <a href='{{ $social->website ?? '#'}}' class='fa fa-globe' title='web' target='_blank'></a>
+                            @if ($social->facebook)
+                            <a href='{{ $social->facebook }}' class='fa fa-facebook' title='facebook' target='_blank'></a>   
+                            @endif
+
+                            @if ($social->email)
+                            <a href='mailto:{{ $social->email }}' class='fa fa-envelope' title='mail' target='_blank'></a>  
+                            @endif
+
+                            @if ($social->instagram)
+                            <a href='{{ $social->instagram }}' class='fa fa-instagram' title='instagram' target='_blank'></a>   
+                            @endif
+                            
+                            @if ($social->website)
+                            <a href='{{ $social->website }}' class='fa fa-globe' title='web' target='_blank'></a>   
+                            @endif  
                         </div>
                     </div>
                     <div class='buttons-container wow fadeIn text-center' style='margin-top:5px;'>

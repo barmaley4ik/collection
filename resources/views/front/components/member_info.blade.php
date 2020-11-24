@@ -70,14 +70,25 @@
 																	</p>
 																	<p>
 																		{{ __('front.studio_label') }}: {{ $member->studio }}
+																		@if ($social->website)
 																		<br>
-																		Website: <a href="{{ $social->website ?? ''}} ">{{ $social->website ?? ''}}</a>
+																		Website: <a href="{{ $social->website }} ">{{ $social->website }}</a>	
+																		@endif
+
+																		@if ($social->facebook)
 																		<br>
-																		Facebook: <a href="{{ $social->facebook ?? ''}}">{{ $social->facebook ?? ''}}</a>
+																		Facebook: <a href="{{ $social->facebook }} ">{{ $social->facebook }}</a>	
+																		@endif																		
+		
+																		@if ($social->instagram)
 																		<br>
-																		Instagram: <a href="{{ $social->instagram ?? ''}}">{{ $social->instagram ?? ''}}</a>
+																		Instagram: <a href="{{ $social->instagram }} ">{{ $social->instagram }}</a>	
+																		@endif
+																																					
+																		@if ($social->email)
 																		<br>
-																		E-mail: <a href="mailto:{{ $social->email ?? ''}}">{{ $social->email ?? ''}}</a>									
+																		E-mail: <a href="{{ $social->email }} ">{{ $social->email }}</a>	
+																		@endif									
 																	</p>
 																</div> 
 															</div>

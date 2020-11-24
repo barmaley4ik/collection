@@ -94,12 +94,12 @@ class WelcomeController extends Controller
         if( is_null($slug) ) {
 
             $festival = Festival::has('disposition')->defaultFestival()->firstOrFail();
-            $dispositionPlaces = $festival->disposition->dispositionPlaces()->paginate(1);
+            $dispositionPlaces = $festival->disposition->dispositionPlaces()->paginate(50);
 
         } else {
 
             $festival = Festival::has('disposition')->otherFestival($slug)->firstOrFail();
-            $dispositionPlaces = $festival->disposition->dispositionPlaces()->paginate(1);
+            $dispositionPlaces = $festival->disposition->dispositionPlaces()->paginate(50);
 
         }
 

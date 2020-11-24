@@ -1,0 +1,17 @@
+/**
+         * Create a web friendly URL slug from a string.
+         *
+         * Requires XRegExp (http://xregexp.com) with unicode add-ons for UTF-8 support.
+         *
+         * Although supported, transliteration is discouraged because
+         *     1) most web browsers support UTF-8 characters in URLs
+         *     2) transliteration causes a loss of information
+         *
+         * @author Sean Murphy <sean@iamseanmurphy.com>
+         * @copyright Copyright 2012 Sean Murphy. All rights reserved.
+         * @license http://creativecommons.org/publicdomain/zero/1.0/
+         *
+         * @param string s
+         * @param object opt
+         * @return string
+         */

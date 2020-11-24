@@ -241,6 +241,7 @@ Route::group(['middleware' => 'multilang'], function() {
 Route::post('/store-proposal', 'Front\WelcomeController@store_proposal')->name('store-proposal');    
 Route::post('/store-biz-proposal', 'Front\WelcomeController@store_biz_proposal')->name('store-biz-proposal');    
 
-Route::get('/wes', function () {
-    phpinfo();
+Route::get('tr', function () {
+    dd(GoogleTranslate::translate('Привет мир First Item', 'en', 'html')['translated_text']);
+
 });

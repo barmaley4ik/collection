@@ -23,6 +23,8 @@ class Disposition extends Model
 
     public function dispositionPlaces()
     {
-        return $this->hasMany(DispositionPlace::class);
+        return $this->hasMany(DispositionPlace::class)
+        ->orderByRaw('length(json_unquote(json_extract(`place`,'. "'$.\"".app()->getLocale()."\"'))) asc")
+        ->orderBy('place->'.app()->getLocale());
     }        
 }
